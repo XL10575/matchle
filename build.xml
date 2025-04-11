@@ -1,0 +1,113 @@
+<project name="MatchleGameProject" xmlns:jacoco="antlib:org.jacoco.ant">
+  <!-- Project properties: adjust src.dir if your sources are in a subfolder -->
+  <property name="src.dir" value="."/>
+  <property name="build.dir" value="build"/>
+  <property name="output.dir" value="output"/>
+  <property name="output.file" value="${output.dir}/output.txt"/>
+  <property name="error.file" value="${output.dir}/error.txt"/>
+  <property name="report.dir" value="report"/>
+  <property name="junit.dir" value="${report.dir}/junit"/>
+  <property name="jacoco.dir" value="${report.dir}/jacoco"/>
+  <property name="jacoco.file" value="${jacoco.dir}/jacoco.exec"/>
+  <property name="doc.dir" value="doc"/>
+  <property name="main-class" value="MatchleExtensionApp"/>
+
+  <!-- Classpath for testing -->
+  <path id="project.classpath">
+    <pathelement location="${basedir}/lib/junit-4.13.2.jar"/>
+    <pathelement location="${basedir}/lib/hamcrest-core-1.3.jar"/>
+  </path>
+
+  <!-- Clean target -->
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+    <delete dir="${report.dir}"/>
+    <delete dir="${doc.dir}"/>
+    <delete dir="${output.dir}"/>
+  </target>
+
+  <!-- Build target: compile all Java files -->
+  <target name="build">
+    <mkdir dir="${build.dir}"/>
+    <javac srcdir="${src.dir}" destdir="${build.dir}" debug="true" includeAntRuntime="yes">
+      <include name="**/*.java"/>
+    </javac>
+  </target>
+
+  <!-- Run target -->
+  <target name="run" depends="build">
+    <mkdir dir="${output.dir}"/>
+    <java fork="true" classname="${main-class}" classpath="${build.dir}"
+          output="${output.file}" error="${error.file}">
+      <assertions><enable/></assertions>
+      <arg line="${args}"/>
+    </java>
+  </target>
+
+  <!-- Test target (runs tests with JUnit and collects coverage using Jacoco) -->
+  <target name="test" depends="build">
+    <mkdir dir="${report.dir}"/>
+    <mkdir dir="${junit.dir}"/>
+    <mkdir dir="${jacoco.dir}"/>
+    <jacoco:coverage destfile="${jacoco.file}">
+      <junit fork="yes" includeAntRuntime="yes" printsummary="withOutAndErr">
+        <assertions><enable/></assertions>
+        <formatter type="xml"/>
+        <batchtest fork="yes" filtertrace="off" todir="${junit.dir}">
+          <!-- Include all *Test.class files, excluding main app -->
+          <fileset dir="${build.dir}" includes="**/*Test.class">
+            <exclude name="**/MatchleExtensionApp.class"/>
+          </fileset>
+        </batchtest>
+        <classpath refid="project.classpath"/>
+        <classpath path="${build.dir}"/>
+      </junit>
+    </jacoco:coverage>
+  </target>
+
+  <!-- Report target for generating JUnit and Jacoco HTML reports -->
+  <target name="report" depends="test">
+    <junitreport todir="${junit.dir}">
+      <fileset dir="${junit.dir}" includes="TEST-*.xml"/>
+      <report todir="${junit.dir}"/>
+    </junitreport>
+
+    <jacoco:report>
+      <executiondata>
+        <file file="${jacoco.file}"/>
+      </executiondata>
+      <structure name="${ant.project.name}">
+        <classfiles>
+          <fileset dir="${build.dir}">
+            <!-- Include only the core classes -->
+            <include name="**/Corpus.class"/>
+            <include name="**/Filter.class"/>
+            <include name="**/MatchleScorer.class"/>
+            <include name="**/NGram.class"/>
+            <include name="**/NGramMatcher.class"/>
+            <!-- Exclude test classes and main app -->
+            <exclude name="**/*Test*.class"/>
+            <exclude name="**/MatchleExtensionApp.class"/>
+          </fileset>
+        </classfiles>
+        <sourcefiles>
+          <fileset dir="${src.dir}">
+            <include name="**/*.java"/>
+          </fileset>
+        </sourcefiles>
+      </structure>
+      <html destdir="${jacoco.dir}"/>
+    </jacoco:report>
+  </target>
+
+  <!-- Documentation target -->
+  <target name="doc">
+    <mkdir dir="${doc.dir}"/>
+    <javadoc destdir="${doc.dir}" package="yes">
+      <fileset dir="${src.dir}" defaultexcludes="yes">
+        <include name="**/*.java"/>
+        <exclude name="**/*Test.java"/>
+      </fileset>
+    </javadoc>
+  </target>
+</project>

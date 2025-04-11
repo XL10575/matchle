@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -19,8 +20,11 @@ final class NGramMatcher {
 
     /**
      * Factory method to create a new NGramMatcher from the given key and guess.
+     * Throws NullPointerException if either key or guess is null.
      */
     public static NGramMatcher of(NGram key, NGram guess) {
+        Objects.requireNonNull(key, "Key cannot be null.");
+        Objects.requireNonNull(guess, "Guess cannot be null.");
         return new NGramMatcher(key, guess);
     }
 
@@ -77,52 +81,60 @@ final class NGramMatcher {
             }
         }
     }
+
+    /**
+     * PASS 2: Identify misplaced matches (same character, different index).
+     */
+    private void doMisplacedMatches(int n,
+                                boolean[] keyMatched,
+                                boolean[] guessMatched,
+                                List<Filter> partialFilters) {
+        // Outer loop calls a helper method to handle low complexity per index.
+        for (int i = 0; i < n; i++) {
+            handleMisplacedAtIndex(i, n, keyMatched, guessMatched, partialFilters);
+        }
+    }
+
+    /**
+     * Helper method that checks and marks a misplaced match for a specific guess index.
+     */
+    private void handleMisplacedAtIndex(int i,
+                                        int n,
+                                        boolean[] keyMatched,
+                                        boolean[] guessMatched,
+                                        List<Filter> partialFilters) {
+        if (guessMatched[i]) {
+            return;
+        }
+
+        char guessChar = guess.get(i);
+        for (int j = 0; j < n; j++) {
+            if (!keyMatched[j] && key.get(j) == guessChar) {
+                // Found a misplaced match
+                keyMatched[j] = true;
+                guessMatched[i] = true;
+
+                NGram.IndexedCharacter ic = new NGram.IndexedCharacter(i, guessChar);
+                Filter misplacedFilter = Filter.from(ng -> ng.containsElsewhere(ic));
+                partialFilters.add(misplacedFilter);
+
+                break; // Stop once we have matched guess[i]
+            }
+        }
+    }
+
+    /**
+     * PASS 3: Mark any unmatched guess characters as absent.
+     */
     private void doAbsentCharacters(int n,
                                     boolean[] guessMatched,
                                     List<Filter> partialFilters) {
         for (int i = 0; i < n; i++) {
             if (!guessMatched[i]) {
                 char guessChar = guess.get(i);
-
-                // If still unmatched, it is absent in the key
                 Filter absentFilter = Filter.from(ng -> !ng.contains(guessChar));
                 partialFilters.add(absentFilter);
             }
         }
     }
-
-    private void doMisplacedMatches(int n,
-                                boolean[] keyMatched,
-                                boolean[] guessMatched,
-                                List<Filter> partialFilters) {
-    // Outer loop only does 'for' + a single method call => reduced complexity
-    for (int i = 0; i < n; i++) {
-        handleMisplacedAtIndex(i, n, keyMatched, guessMatched, partialFilters);
-    }
-}
-
-    private void handleMisplacedAtIndex(int i,
-                                    int n,
-                                    boolean[] keyMatched,
-                                    boolean[] guessMatched,
-                                    List<Filter> partialFilters) {
-    if (guessMatched[i]) {
-        return;
-    }
-
-    char guessChar = guess.get(i);
-    for (int j = 0; j < n; j++) {
-        if (!keyMatched[j] && key.get(j) == guessChar) {
-            // Found a misplaced match
-            keyMatched[j] = true;
-            guessMatched[i] = true;
-
-            NGram.IndexedCharacter ic = new NGram.IndexedCharacter(i, guessChar);
-            Filter misplacedFilter = Filter.from(ng -> ng.containsElsewhere(ic));
-            partialFilters.add(misplacedFilter);
-
-            break; // stop once we match guess[i] 
-        }
-    }
-}
 }
