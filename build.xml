@@ -1,16 +1,16 @@
 <project name="MatchleGameProject" xmlns:jacoco="antlib:org.jacoco.ant">
   <!-- Project properties: adjust src.dir if your sources are in a subfolder -->
-  <property name="src.dir" value="."/>
-  <property name="build.dir" value="build"/>
-  <property name="output.dir" value="output"/>
-  <property name="output.file" value="${output.dir}/output.txt"/>
-  <property name="error.file" value="${output.dir}/error.txt"/>
-  <property name="report.dir" value="report"/>
-  <property name="junit.dir" value="${report.dir}/junit"/>
-  <property name="jacoco.dir" value="${report.dir}/jacoco"/>
-  <property name="jacoco.file" value="${jacoco.dir}/jacoco.exec"/>
-  <property name="doc.dir" value="doc"/>
-  <property name="main-class" value="MatchleExtensionApp"/>
+  <property name="src.dir"       value="."/>
+  <property name="build.dir"     value="build"/>
+  <property name="output.dir"    value="output"/>
+  <property name="output.file"   value="${output.dir}/output.txt"/>
+  <property name="error.file"    value="${output.dir}/error.txt"/>
+  <property name="report.dir"    value="report"/>
+  <property name="junit.dir"     value="${report.dir}/junit"/>
+  <property name="jacoco.dir"    value="${report.dir}/jacoco"/>
+  <property name="jacoco.file"   value="${jacoco.dir}/jacoco.exec"/>
+  <property name="doc.dir"       value="doc"/>
+  <property name="main-class"    value="MatchleExtensionApp"/>
 
   <!-- Classpath for testing -->
   <path id="project.classpath">
@@ -101,13 +101,26 @@
   </target>
 
   <!-- Documentation target -->
-  <target name="doc">
+  <target name="doc" description="Generate Javadoc HTML from source comments">
+    <!-- Create docs output directory -->
     <mkdir dir="${doc.dir}"/>
-    <javadoc destdir="${doc.dir}" package="yes">
-      <fileset dir="${src.dir}" defaultexcludes="yes">
-        <include name="**/*.java"/>
-        <exclude name="**/*Test.java"/>
-      </fileset>
+
+    <!-- Run Javadoc over only .java sources, excluding tests -->
+    <javadoc
+        sourcepath="${src.dir}"
+        destdir="${doc.dir}"
+        classpathref="project.classpath"
+        use="true"
+        author="true"
+        version="true"
+        windowtitle="${ant.project.name} API"
+        doctitle="${ant.project.name} API Documentation">
+      <!-- INCLUDE only .java files, EXCLUDE *Test.java -->
+      <fileset dir="${src.dir}"
+               includes="**/*.java"
+               excludes="**/*Test.java"/>
+      <!-- Link to the Java SE 17 API for cross-references -->
+      <link href="https://docs.oracle.com/en/java/javase/17/docs/api/"/>
     </javadoc>
   </target>
 </project>
