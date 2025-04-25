@@ -1,0 +1,276 @@
+<html xmlns:string="xalan://java.lang.String" xmlns:lxslt="http://xml.apache.org/xslt">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Unit Test Results: All Tests</title>
+        <link rel="stylesheet" type="text/css" title="Style" href="stylesheet.css">
+    </head>
+    <body onload="open('allclasses-frame.html','classListFrame')">
+        <h1>Unit Test Results.</h1>
+        <table width="100%">
+            <tr>
+                <td align="left"></td><td align="right">Designed for use with <a href="https://www.junit.org/">JUnit</a> and <a href="https://ant.apache.org/">Ant</a>.</td>
+            </tr>
+        </table>
+        <hr size="1">
+        <h2>All Tests</h2>
+        <table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+            <tr valign="top">
+                <th>Class</th><th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/0_CorpusTest.html">CorpusTest</a></td><td><a name="testIteratorAndStream"></a><a href="/0_CorpusTest.html#testIteratorAndStream">testIteratorAndStream</a></td><td>Success</td><td></td><td>0.009</td>
+            </tr>
+            <tr valign="top" class="Failure">
+                <td><a href="/0_CorpusTest.html">CorpusTest</a></td><td><a name="testBuildNonEmptyCorpus"></a><a href="/0_CorpusTest.html#testBuildNonEmptyCorpus">testBuildNonEmptyCorpus</a></td><td>Failure</td><td>Should contain exactly 1 NGram expected:&lt;1&gt; but was:&lt;2&gt;
+                    <br>
+                    <br>
+                    <code>junit.framework.AssertionFailedError: Should contain exactly 1 NGram expected:&lt;1&gt; but was:&lt;2&gt;
+                        <br>
+                        	at org.junit.Assert.fail(Assert.java:89)
+                        <br>
+                        	at org.junit.Assert.failNotEquals(Assert.java:835)
+                        <br>
+                        	at org.junit.Assert.assertEquals(Assert.java:647)
+                        <br>
+                        	at CorpusTest.testBuildNonEmptyCorpus(CorpusTest.java:31)
+                        <br>
+                        	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+                        <br>
+                        	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+                        <br>
+                        	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+                        <br>
+                        	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+                        <br>
+                        	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+                        <br>
+                        	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+                        <br>
+                        	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+                        <br>
+                        	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+                        <br>
+                        	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+                        <br>
+                        	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+                        <br>
+                        	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+                        <br>
+                        	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+                        <br>
+                        	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+                        <br>
+                        	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+                        <br>
+                        	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+                        <br>
+                        	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+                        <br>
+                        	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+                        <br>
+                        	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+                        <br>
+                        	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+                        <br>
+                        	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:535)
+                        <br>
+                        	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1197)
+                        <br>
+                        	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
+                        <br>
+                    </code></td><td>0.004</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/0_CorpusTest.html">CorpusTest</a></td><td><a name="testContainsAndSizeFilter"></a><a href="/0_CorpusTest.html#testContainsAndSizeFilter">testContainsAndSizeFilter</a></td><td>Success</td><td></td><td>0.004</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/0_CorpusTest.html">CorpusTest</a></td><td><a name="testBuildInconsistentSizes"></a><a href="/0_CorpusTest.html#testBuildInconsistentSizes">testBuildInconsistentSizes</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="Error">
+                <td><a href="/0_CorpusTest.html">CorpusTest</a></td><td><a name="testBuildEmptyCorpus"></a><a href="/0_CorpusTest.html#testBuildEmptyCorpus">testBuildEmptyCorpus</a></td><td>Error</td><td>Inconsistent NGram sizes in builder.
+                    <br>
+                    <br>
+                    <code>java.lang.IllegalStateException: Inconsistent NGram sizes in builder.
+                        <br>
+                        	at Corpus$Builder.build(Corpus.java:167)
+                        <br>
+                        	at CorpusTest.testBuildEmptyCorpus(CorpusTest.java:15)
+                        <br>
+                        	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+                        <br>
+                        	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+                        <br>
+                        	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+                        <br>
+                        	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+                        <br>
+                        	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+                        <br>
+                        	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+                        <br>
+                        	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+                        <br>
+                        	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+                        <br>
+                        	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+                        <br>
+                        	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+                        <br>
+                        	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+                        <br>
+                        	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+                        <br>
+                        	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+                        <br>
+                        	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+                        <br>
+                        	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+                        <br>
+                        	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+                        <br>
+                        	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+                        <br>
+                        	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+                        <br>
+                        	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+                        <br>
+                        	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:535)
+                        <br>
+                        	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1197)
+                        <br>
+                        	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
+                        <br>
+                    </code></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/0_CorpusTest.html">CorpusTest</a></td><td><a name="testAddAllNullCollection"></a><a href="/0_CorpusTest.html#testAddAllNullCollection">testAddAllNullCollection</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/0_CorpusTest.html">CorpusTest</a></td><td><a name="testAddNullNGram"></a><a href="/0_CorpusTest.html#testAddNullNGram">testAddNullNGram</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/1_FilterTest.html">FilterTest</a></td><td><a name="testFilterFromNullPredicate"></a><a href="/1_FilterTest.html#testFilterFromNullPredicate">testFilterFromNullPredicate</a></td><td>Success</td><td></td><td>0.007</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/1_FilterTest.html">FilterTest</a></td><td><a name="testAndEmptyOptional"></a><a href="/1_FilterTest.html#testAndEmptyOptional">testAndEmptyOptional</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/1_FilterTest.html">FilterTest</a></td><td><a name="testFilterFalse"></a><a href="/1_FilterTest.html#testFilterFalse">testFilterFalse</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/1_FilterTest.html">FilterTest</a></td><td><a name="testTestNullNGram"></a><a href="/1_FilterTest.html#testTestNullNGram">testTestNullNGram</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/1_FilterTest.html">FilterTest</a></td><td><a name="testAndWithFilter"></a><a href="/1_FilterTest.html#testAndWithFilter">testAndWithFilter</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/1_FilterTest.html">FilterTest</a></td><td><a name="testAndNullOptional"></a><a href="/1_FilterTest.html#testAndNullOptional">testAndNullOptional</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/2_MatchleScorerTest.html">MatchleScorerTest</a></td><td><a name="testBestWorstCaseGuess"></a><a href="/2_MatchleScorerTest.html#testBestWorstCaseGuess">testBestWorstCaseGuess</a></td><td>Success</td><td></td><td>0.027</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/2_MatchleScorerTest.html">MatchleScorerTest</a></td><td><a name="testScore"></a><a href="/2_MatchleScorerTest.html#testScore">testScore</a></td><td>Success</td><td></td><td>0.002</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/2_MatchleScorerTest.html">MatchleScorerTest</a></td><td><a name="testScoreAverageCase"></a><a href="/2_MatchleScorerTest.html#testScoreAverageCase">testScoreAverageCase</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/2_MatchleScorerTest.html">MatchleScorerTest</a></td><td><a name="testScoreNullKey"></a><a href="/2_MatchleScorerTest.html#testScoreNullKey">testScoreNullKey</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/2_MatchleScorerTest.html">MatchleScorerTest</a></td><td><a name="testScoreNullGuess"></a><a href="/2_MatchleScorerTest.html#testScoreNullGuess">testScoreNullGuess</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/2_MatchleScorerTest.html">MatchleScorerTest</a></td><td><a name="testBestAverageCaseGuess"></a><a href="/2_MatchleScorerTest.html#testBestAverageCaseGuess">testBestAverageCaseGuess</a></td><td>Success</td><td></td><td>0.003</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/2_MatchleScorerTest.html">MatchleScorerTest</a></td><td><a name="testScoreWorstCase"></a><a href="/2_MatchleScorerTest.html#testScoreWorstCase">testScoreWorstCase</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/3_NGramMatcherTest.html">NGramMatcherTest</a></td><td><a name="testDifferentLengths"></a><a href="/3_NGramMatcherTest.html#testDifferentLengths">testDifferentLengths</a></td><td>Success</td><td></td><td>0.012</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/3_NGramMatcherTest.html">NGramMatcherTest</a></td><td><a name="testAnagram"></a><a href="/3_NGramMatcherTest.html#testAnagram">testAnagram</a></td><td>Success</td><td></td><td>0.005</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/3_NGramMatcherTest.html">NGramMatcherTest</a></td><td><a name="testExactAndAbsent"></a><a href="/3_NGramMatcherTest.html#testExactAndAbsent">testExactAndAbsent</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/3_NGramMatcherTest.html">NGramMatcherTest</a></td><td><a name="testMisplaced"></a><a href="/3_NGramMatcherTest.html#testMisplaced">testMisplaced</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testIteratorAndStream"></a><a href="/4_NGramTest.html#testIteratorAndStream">testIteratorAndStream</a></td><td>Success</td><td></td><td>0.011</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testContainsElsewhereNoOtherIndex"></a><a href="/4_NGramTest.html#testContainsElsewhereNoOtherIndex">testContainsElsewhereNoOtherIndex</a></td><td>Success</td><td></td><td>0.003</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testMatchesDifferentChar"></a><a href="/4_NGramTest.html#testMatchesDifferentChar">testMatchesDifferentChar</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testEqualsNullOrDifferentClass"></a><a href="/4_NGramTest.html#testEqualsNullOrDifferentClass">testEqualsNullOrDifferentClass</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testFromListEmpty"></a><a href="/4_NGramTest.html#testFromListEmpty">testFromListEmpty</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testGetIndexOutOfBounds"></a><a href="/4_NGramTest.html#testGetIndexOutOfBounds">testGetIndexOutOfBounds</a></td><td>Success</td><td></td><td>0.005</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testContainsChar"></a><a href="/4_NGramTest.html#testContainsChar">testContainsChar</a></td><td>Success</td><td></td><td>0.002</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testFromStringNull"></a><a href="/4_NGramTest.html#testFromStringNull">testFromStringNull</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testMatchesValid"></a><a href="/4_NGramTest.html#testMatchesValid">testMatchesValid</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testFromListNullList"></a><a href="/4_NGramTest.html#testFromListNullList">testFromListNullList</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testFromStringEmpty"></a><a href="/4_NGramTest.html#testFromStringEmpty">testFromStringEmpty</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testValidateStaticMethodNullList"></a><a href="/4_NGramTest.html#testValidateStaticMethodNullList">testValidateStaticMethodNullList</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testFromStringNormal"></a><a href="/4_NGramTest.html#testFromStringNormal">testFromStringNormal</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testFromListNormal"></a><a href="/4_NGramTest.html#testFromListNormal">testFromListNormal</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testContainsElsewhereDifferentIndex"></a><a href="/4_NGramTest.html#testContainsElsewhereDifferentIndex">testContainsElsewhereDifferentIndex</a></td><td>Success</td><td></td><td>0.002</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testEqualsSameObject"></a><a href="/4_NGramTest.html#testEqualsSameObject">testEqualsSameObject</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testContainsElsewhereNullIC"></a><a href="/4_NGramTest.html#testContainsElsewhereNullIC">testContainsElsewhereNullIC</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testValidateStaticMethod"></a><a href="/4_NGramTest.html#testValidateStaticMethod">testValidateStaticMethod</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testValidateStaticMethodNullCharacter"></a><a href="/4_NGramTest.html#testValidateStaticMethodNullCharacter">testValidateStaticMethodNullCharacter</a></td><td>Success</td><td></td><td>0.003</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testFromListContainsNullChar"></a><a href="/4_NGramTest.html#testFromListContainsNullChar">testFromListContainsNullChar</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testEqualsAndHashCode"></a><a href="/4_NGramTest.html#testEqualsAndHashCode">testEqualsAndHashCode</a></td><td>Success</td><td></td><td>0.001</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testMatchesInvalidIndex"></a><a href="/4_NGramTest.html#testMatchesInvalidIndex">testMatchesInvalidIndex</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testGetValidIndex"></a><a href="/4_NGramTest.html#testGetValidIndex">testGetValidIndex</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+            <tr valign="top" class="TableRowColor">
+                <td><a href="/4_NGramTest.html">NGramTest</a></td><td><a name="testContainsElsewhereNotContainsAtAll"></a><a href="/4_NGramTest.html#testContainsElsewhereNotContainsAtAll">testContainsElsewhereNotContainsAtAll</a></td><td>Success</td><td></td><td>0.000</td>
+            </tr>
+        </table>
+    </body>
+</html>
